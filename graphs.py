@@ -1,0 +1,80 @@
+import json
+import matplotlib.pyplot as plt
+# from matplotlib.pyplot import plot
+
+with open("result.json", "r") as file:
+    data = json.load(file)
+
+    X = [2**i for i in range(7, 16)]
+
+    plt.plot(X, data["0"][0][0], label="insertion")
+    plt.plot(X, data["0"][1][0], label="merge")
+    plt.plot(X, data["0"][2][0], label="selection")
+    plt.plot(X, data["0"][3][0], label="shell")
+    plt.legend()
+    plt.yscale("log")
+    plt.savefig("random_time.png")
+    plt.close()
+
+    plt.plot(X, data["0"][0][1], label="insertion")
+    plt.plot(X, data["0"][1][1], label="merge")
+    plt.plot(X, data["0"][2][1], label="selection")
+    plt.plot(X, data["0"][3][1], label="shell")
+    plt.legend()
+    plt.yscale("log")
+    plt.savefig("random_operations.png")
+    plt.close()
+
+    plt.plot(X, data["1"][0][0], label="insertion")
+    plt.plot(X, data["1"][1][0], label="merge")
+    plt.plot(X, data["1"][2][0], label="selection")
+    plt.plot(X, data["1"][3][0], label="shell")
+    plt.legend()
+    plt.yscale("log")
+    plt.savefig("increasing_lst_time.png")
+    plt.close()
+
+    plt.plot(X, data["1"][0][1], label="insertion")
+    plt.plot(X, data["1"][1][1], label="merge")
+    plt.plot(X, data["1"][2][1], label="selection")
+    plt.plot(X, data["1"][3][1], label="shell")
+    plt.legend()
+    plt.yscale("log")
+    plt.savefig("increasing_lst_operations.png")
+    plt.close()
+
+    plt.plot(X, data["2"][0][0], label="insertion")
+    plt.plot(X, data["2"][1][0], label="merge")
+    plt.plot(X, data["2"][2][0], label="selection")
+    plt.plot(X, data["2"][3][0], label="shell")
+    plt.legend()
+    plt.yscale("log")
+    plt.savefig("decreasing_lst_time.png")
+    plt.close()
+
+    plt.plot(X, data["2"][0][1], label="insertion")
+    plt.plot(X, data["2"][1][1], label="merge")
+    plt.plot(X, data["2"][2][1], label="selection")
+    plt.plot(X, data["2"][3][1], label="shell")
+    plt.legend()
+    plt.yscale("log")
+    plt.savefig("decreasing_operations.png")
+    plt.close()
+
+    plt.plot(X, data["3"][0][0], label="insertion")
+    plt.plot(X, data["3"][1][0], label="merge")
+    plt.plot(X, data["3"][2][0], label="selection")
+    plt.plot(X, data["3"][3][0], label="shell")
+    plt.legend()
+    plt.yscale("log")
+    plt.savefig("set_lst_time.png")
+    plt.close()
+
+    plt.plot(X, data["3"][0][1], label="insertion")
+    plt.plot(X, data["3"][1][1], label="merge")
+    plt.plot(X, data["3"][2][1], label="selection")
+    plt.plot(X, data["3"][3][1], label="shell")
+    plt.legend()
+    plt.yscale("log")
+    plt.savefig("set_lst_operations.png")
+    plt.close()
